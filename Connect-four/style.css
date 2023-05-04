@@ -1,0 +1,25 @@
+html{
+    background-color: rgb(77, 77, 77);
+    color: white;
+}
+#board{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: black;
+    width: 700px;
+    height: 600px;
+}
+.cell{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgb(108, 147, 255);
+    border:rgb(108, 147, 255)
+}
+.red{
+    background-color: red;
+}
+.yellow{
+    background-color: yellow;
+}

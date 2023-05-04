@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <link rel = "stylesheet" href = "style.css">
+    <script defer src = "script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Snake</h1>
+        <h2 id = 'score'>Score = 0</h2>
+    </header>
+    <div id = 'playing-field'>
+        <div id = 'board'></div>
+        <div id = 'options-container'>
+            <h2>Game Options</h2>
+            <h3>Speed:</h3>
+            <select id = 'speed'>
+                <option value = "5">Slow</option>
+                <option value = "10">Medium</option>
+                <option value = "18">Fast</option>
+                <option value = "23">Zippy!</option>
+                <option value = "35">SUPERSONIC!!</option>
+            </select>
+            <h3>Size:</h3>
+            <select id="size">
+                <option value="20">Small</option>
+                <option value="40">Medium</option>
+                <option value="60">Large</option>
+            </select>
+            <button id = 'restart'>Restart</button>
+        </div>
+    </div>
+</body>
+</html>

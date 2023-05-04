@@ -1,0 +1,61 @@
+html{
+    background-color: rgb(57, 62, 83);
+    color: white;
+    box-sizing: border-box;
+}
+body{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+header{
+    font-size: 150%;
+    margin: -5px;
+}
+header >h1{
+    margin-bottom: -10px;
+}
+#playing-field{
+    display:flex;
+}
+#board{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    justify-self: center;
+    width: 1000px;
+    height: 1000px;
+    outline:1px solid white;
+}
+#options-container{
+    padding: 15px;
+    outline: 1px solid white;
+    font-size: 150%;
+}
+h3{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+select{
+    width: 75%;
+    font-size: 100%;
+    margin-bottom: 20px;
+}
+button{
+    font-size: 100%;
+}
+.cell{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(108, 147, 255);
+    outline:1px solid rgb(117, 154, 255);
+    flex-shrink: 1;
+}
+.apple{
+    background-color: red;
+}
+.snake{
+    background-color: black;
+}
