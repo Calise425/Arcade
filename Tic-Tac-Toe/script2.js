@@ -51,6 +51,7 @@ function randomNum(min, max) {
 //Adds eventListener to the play button to randomly roll for which player goes first
 playButton.addEventListener('click', (event) => {
     const firstPlayer = randomNum(1,3);
+    options.style.display = 'none';
     if (firstPlayer === 1){
         h2.innerText = `${p1Name}'s move`
         xPlayer = p1Name;

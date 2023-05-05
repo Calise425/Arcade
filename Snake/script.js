@@ -1,21 +1,19 @@
-let gameOver = false;
-let score = 0;
 const displayScore = document.getElementById('score');
 const board = document.getElementById('board');
 const boardArray = [];
+const options = document.getElementById('options-container');
+const startButton = document.getElementById('start');
+const speedSelect = document.getElementById('speed');
+
+let gameOver = false;
+let score = 0;
 let allowCollision = false;
+let speedSelected = false;
+let speed = 10;
 
 //Determining the starting dimensions of the board, maybe allow for changing later?
 let sizeX = 50;
 let sizeY = 50;
-
-const size = document.getElementById('size');
-size.addEventListener('change', (event) => {
-    sizeX = event.target.value;
-    sizeY = event.target.value;
-    buildBoard();
-    console.log(sizeX);
-});
 
 //Create a random function to make the starting location of the apple random
 function randomNum(min, max) {
@@ -59,6 +57,8 @@ function renderState() {
     if (!gameOver){
         //Add length to snake and generate new apple if snake head touches the apple
         if (head[0] === appleLoc[0] && head[1] === appleLoc[1]){
+            score++;
+            displayScore.innerText = score;
             snake.push(nextHead)
             snake.forEach((el) => {
                 const cell = document.querySelector(`#cell-${el[0]}-${el[1]}`);
@@ -71,10 +71,11 @@ function renderState() {
         //Gameover if snake touches itself
         } else if ((!allowCollision) && (document.querySelector(`#cell-${nextHead[0]}-${nextHead[1]}`).classList.contains('snake'))) {
             gameOver = true;
+            displayScore.innerText = `Game Over! Final Score: ${score}`;
         //GameOver if snake goes out of bounds
         } else if (head[0] < 0 || head[0] >= sizeX || head[1] < 0 || head[1] >= sizeY){
             gameOver = true;
-        
+            displayScore.innerText = `Game Over! Final Score: ${score}`;
         } else {
             const removed = snake.shift();
             const removedSnake = document.querySelector(`#cell-${removed[0]}-${removed[1]}`)
@@ -104,14 +105,19 @@ document.onkeydown = (e) => {
 };
 
 function tick() {
-    renderState();
+    if (speedSelected){
+        renderState();
+    }
 };
 
-let speed = 10;
-const speedSelect = document.getElementById('speed');
 speedSelect.addEventListener('change', (event) => {
     speed = event.target.value;
-    console.log(speed)
 });
 
-setInterval(tick, 1000/speed);
+startButton.addEventListener('click', () => {
+    options.style.display = 'none';
+    speedSelected = true;
+    setInterval(tick, 1000/speed);
+});
+
+
