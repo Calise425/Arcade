@@ -9,17 +9,27 @@
     <script defer src = "script2.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Tic-Tac-Toe</h1>
-        <h2></h2>
-    </header>
-    <div id = "board"></div>
-    <div id = buttons>
-        <select>
-            <option value=1>Single Player</option>
-            <option value=2>Two Player</option>
-        </select>
-        <button id = reset>Reset</button>
+    <div class = "playing-field">
+        <header>
+            <h1>Tic-Tac-Toe</h1>
+            <h2>Playing Computer</h2>
+        </header>
+        <div id = "board"></div>
+        <div id = buttons>
+            <select>
+                <option value=1>Single Player</option>
+                <option value=2>Two Player</option>
+            </select>
+            <button id = reset>Reset</button>
+        </div>
+    </div>
+    <div id = 'options'>
+        <h3>Enter the players' names and hit play!</h3>
+        <h3>Player 1 Name:</h2>
+        <input id = 'player1' type = 'text'>
+        <h3>Player 2 Name:</h2>
+        <input id = 'player2' type = 'text'>
+        <button id = 'play'>Play!</button>
     </div>
 </body>
 </html>

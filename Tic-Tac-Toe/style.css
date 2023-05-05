@@ -1,10 +1,34 @@
 body{
     display:flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgb(77, 77, 77);
     color: white;
+}
+.playing-field{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#options{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    display: none;
+    width: 200px;
+}
+input{
+    width: 80%;
+}
+h3:first-of-type{
+    font-size: 140%;
+}
+#play{
+    background-color: darkgray;
+    border-radius: 20%;
+    width: 50%;
+    margin-top: 10px;
 }
 header{
     display: flex;
@@ -22,6 +46,7 @@ h2{
     justify-content: center;
     align-items: center;
     margin: 5px;
+    width: 40%;
 }
 select{
     font-size: 130%;
@@ -54,3 +79,4 @@ select{
     box-sizing: border-box;
     border: 2px solid rgb(255, 255, 255);
 }
+
